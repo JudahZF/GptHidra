@@ -24,8 +24,8 @@ def explainFunction(c_code):
         Returns:
             str: The explanation provided by the API.
     """
-    url = 'https://api.openai.com/v1/chat/completions'
-    data = {"messages":[ {"role": "user","content":"Explain code:\n" + c_code} ], "model": "gpt-4"}
+    url = 'https://openrouter.ai/api/v1/chat/completions'
+    data = {"messages":[ {"role": "user","content":"Explain code:\n" + c_code} ], "model": "google/gemini-2.5-flash-lite-preview-06-17"}
     data = json.dumps(data)
 
     req = urllib2.Request(url, data,
